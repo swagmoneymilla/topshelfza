@@ -1,0 +1,26 @@
+exchange:
+  name: "coinbase"
+  paper: true
+  symbol: ["BTC/USDT", "ETH/USDT"]
+  timeframe_h: "1h"
+  timeframe_d: "1d"
+
+strategy:
+  ema_fast: 12
+  ema_slow: 26
+  rsi_period: 14
+  rsi_overbought: 70
+  rsi_oversold: 30
+
+risk:
+  capital: 10000.0
+  risk_per_trade: 0.01
+  stop_atr_multiplier: 1.5
+
+ml:
+  model_path: "models/lstm.pth"
+  lookback: 50
+  feature_set: ["close", "volume", "ema_fast", "ema_slow", "rsi"]
+
+logging:
+  level: "INFO"
